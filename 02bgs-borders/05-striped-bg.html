@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    div {
+      display: inline-block;
+      margin-right: 5px;
+      width: 200px;
+      height: 100px;
+    }
+    
+    /*gradients are generated backgroung images*/
+    
+    .gradient {
+      background: linear-gradient(#fb3, #58a);
+    }
+    
+    .gradient-percent {
+      background: linear-gradient(#fb3 20%, #58a 80%);
+    }
+    
+    .gradient-percent-50 {
+      background: linear-gradient(#fb3 50%, #58a 50%);
+    }
+    
+    .gradient-bg-size {
+      background: linear-gradient(#fb3 50%, #58a 50%);
+      background-size: 100% 30px;
+    }
+    
+    .gradient-same-strip-width {
+      /*Specifying 0 for second color position will result in taking the larget value of any color position before it*/
+      background: linear-gradient(#fb3 50%, #58a 0);
+      background-size: 100% 30px;
+    }
+    
+    .stripes-3 {
+      /*Specifying 0 for second color position will result in taking the larget value of any color position before it*/
+      background: linear-gradient(#fb3 33.3%, #58a 0, #58a 66.6%, yellowgreen 0);
+      background-size: 100% 30px;
+    }
+    
+    .v-stripes {
+      background: linear-gradient(to right /*or 90deg*/,#fb3 50%, #58a 50%);
+      background-size: 30px 100%;
+    }
+    
+    .diagonal-stripes {
+      background: linear-gradient(45deg, #fb3 50%, #58a 0);
+      background-size: 30px 30px;
+    }
+    
+    .diagonal-stripes-1 {
+      background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);
+      /*background-size: 30px 30px;*/
+      background-size: 42.42px 42.42px;/*Refer page 44 of the book for explanation of why 42.42px*/
+    }
+    
+    .grad-repeat {
+      background: repeating-linear-gradient(45deg, #fb3, #fb3 15px, #58a 0, #58a 30px);
+    }
+    
+    .grad-repeat-60deg {
+      background: repeating-linear-gradient(60deg, #fb3, #fb3 15px, #58a 0, #58a 30px);
+    }
+    
+    .grad-repeat-bg-size {
+      background: repeating-linear-gradient(45deg, #fb3, #fb3 25%, #58a 0, #58a 50%);
+      background-size: 42.42px 42.42px;
+    }
+    
+    .base-color-variation {
+      background: #58a;
+      background-image: repeating-linear-gradient(45deg,
+                          hsl(0,0%,100%,.1),
+                          hsl(0,0%,100%,.1) 15px,
+                          transparent 0, transparent 30px);
+      animation: rtate 2s linear infinite;
+      height: 20px;
+    }
+    
+    @keyframes rtate {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: 200px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="gradient"></div>
+  <div class="gradient-percent"></div>
+  <div class="gradient-percent-50"></div>
+  <div class="gradient-bg-size"></div>
+  <div class="gradient-same-strip-width"></div>
+  <div class="stripes-3"></div>
+  <div class="v-stripes"></div>
+  <div class="diagonal-stripes"></div>
+  <div class="diagonal-stripes-1"></div>
+  <div class="grad-repeat"></div>
+  <div class="grad-repeat-60deg"></div>
+  <div class="grad-repeat-bg-size"></div>
+  <div class="base-color-variation"></div>
+</body>
+</html>

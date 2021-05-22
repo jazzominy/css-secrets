@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <style>
+    /*button {
+      padding: 6px 16px;
+      border: 1px solid #446d88;
+      background: #58a linear-gradient(#77a0bb, #58a);
+      border-radius: 4px;
+      box-shadow: 0 1px 5px gray;
+      color: white;
+      text-shadow: 0 -1px 1px #335166;
+      font-size: 20px;
+      line-height: 30px;
+    }*/
+    
+    /*Use em so that as the font-size changes, other properties scale accordingly*/
+    /*For gradient, use semi-transparenrt white and dark for lighter/darker varients so that
+    changing background color wont be a problem*/
+    button {
+      padding: .3em .8em;
+      border: 1px solid rgba(0,0,0,.1);
+      background: #58a linear-gradient(hsla(0,0%,100%,.2),transparent);
+      border-radius: .2em;
+      box-shadow: 0 .05em .25em rgba(0,0,0,.5);
+      color: white;
+      text-shadow: 0 -.05em .05em rgba(0,0,0,.5);
+      font-size: 125%; /*Assuming parent font size of 16px, specify this as a % of parent font-size*/
+      line-height: 1.5; /*Specify this as relative to font-size*/
+    }
+    
+    button.cancel {
+      background-color: #c00;
+    }
+    
+    button.ok {
+      background-color: #6b0;
+    }
+  </style>
+</head>
+<body>
+  <button class="ok">Yes!</button><button class="cancel">No!</button>
+</body>
+</html>

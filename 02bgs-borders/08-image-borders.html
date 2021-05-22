@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .border-img {
+      padding: 1em;
+      border: 1em solid transparent;
+      background: linear-gradient(white, white),
+                  url('http://csssecrets.io/images/stone-art.jpg');
+      background-size: cover;
+      background-clip: padding-box, border-box;/*For image set the clip to border-box*/
+      background-origin: border-box;/*Since we want image as border, set the origin accordingly*/
+      margin-bottom: 10px;
+    }
+    
+    .vintage-envelope {
+      padding: 1em;
+      border: 1em solid transparent;
+      background: linear-gradient(white, white) padding-box,
+                  repeating-linear-gradient(-45deg,
+                    red 0, red 12.5%,
+                    transparent 0, transparent 25%,
+                    #58a 0, #58a 37.5%,
+                    transparent 0, transparent 50%
+                  );
+      background-size: 5em 5em;
+      margin-bottom: 5px;
+    }
+    
+    .ants-border {
+      padding: 1em;
+      border: 1px solid transparent;
+      background: linear-gradient(white, white) padding-box,
+                  repeating-linear-gradient(-45deg,
+                    black 0, black 25%,
+                    white 0, white 50%
+                  );
+      background-size: .6em .6em;
+      animation: ants .5s linear infinite;
+    }
+    
+    @keyframes ants {
+      from {
+        background-position: 0;
+      }
+      to {
+        background-position: 0.6em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="border-img">
+    Me has a border image
+  </div>
+  <div class="vintage-envelope"></div>
+  <div class="ants-border">Hi there</div>
+</body>
+</html>

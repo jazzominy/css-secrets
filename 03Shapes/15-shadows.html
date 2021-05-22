@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+      background: yellowgreen;
+    }
+    
+    .shadow {
+      box-shadow: 2px 3px 4px rgba(0,0,0,.5);
+    }
+    
+    .shadow-spread {
+      box-shadow: 0 5px 4px -4px black;/*4th length param is spread. It increases/decreases the size of the shadow*/
+    }
+    
+    .shadow-spread-2-sides {
+      box-shadow: 3px 3px 6px -3px black;
+    }
+    
+    .shadow-spread-opp-sides {
+      box-shadow: 5px 0 5px -5px black,
+                  -5px 0 5px -5px black;
+    }
+  </style>
+</head>
+<body>
+  <div class="shadow"></div>
+  <div class="shadow-spread"></div>
+  <div class="shadow-spread-2-sides"></div>
+  <div class="shadow-spread-opp-sides"></div>
+</body>
+</html>

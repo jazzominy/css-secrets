@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    div {
+      display: inline-block;
+      margin-right: 5px;
+      width: 200px;
+      height: 100px;
+    }
+    
+    .grid {
+      background: white;
+      background-image: linear-gradient(90deg, rgba(200,0,0,.5) 50%, transparent 0),
+                        linear-gradient(rgba(200,0,0,.5) 50%, transparent 0);
+      background-size: 30px 30px;
+    }
+    
+    .guide {
+      background: #58a;
+      background-image: linear-gradient(white 1px, transparent 0),
+                        linear-gradient(90deg, white 1px, transparent 0);
+      background-size: 30px 30px;
+    }
+    
+    .guide-complex {
+      background: #58a;
+      background-image: linear-gradient(white 2px, transparent 0),
+                        linear-gradient(90deg, white 2px, transparent 0),
+                        linear-gradient(hsla(0,0%,100%,.3) 1px, transparent 0),
+                        linear-gradient(90deg, hsla(0,0%,100%,.3) 1px, transparent 0);
+      background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
+    }
+    
+    .dot {
+      background: #655;
+      background-image: radial-gradient(tan 30%, transparent 0);
+      background-size: 30px 30px;
+    }
+    
+    .polka-dot {
+      background: #655;
+      background-image: radial-gradient(tan 30%, transparent 0),
+                        radial-gradient(tan 30%, transparent 0);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+    }
+    
+    .checkerboard {
+      background: #eee;
+      background-image: linear-gradient(45deg, #bbb 25%, transparent 0),
+                        linear-gradient(45deg, transparent 75%, #bbb 0),
+                        linear-gradient(45deg, #bbb 25%, transparent 0),
+                        linear-gradient(45deg, transparent 75%, #bbb 0);
+      background-position: 0 0, 15px 15px, 15px 15px, 30px 30px;
+      background-size: 30px 30px;
+    }
+    
+    .checkerboard-alpha {
+      background: #eee;
+      background-image: linear-gradient(45deg, rgba(0,0,0,.25) 25%, transparent 0,
+                                        transparent 75%, rgba(0,0,0,.25) 0),
+                        linear-gradient(45deg, rgba(0,0,0,.25) 25%, transparent 0,
+                                        transparent 75%, rgba(0,0,0,.25) 0);
+      background-position: 0 0, 15px 15px;
+      background-size: 30px 30px;
+    }
+    
+    .bg-svg {
+      background: #eee url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"\
+           width="100" height="100" fill-opacity=".25">\
+        <rect x="50" width="50" height="50"/>\
+        <rect y="50" width="50" height="50"/>\
+      </svg>');
+      background-size: 30px 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="guide"></div>
+  <div class="guide-complex"></div>
+  <div class="dot"></div>
+  <div class="polka-dot"></div>
+  <div class="checkerboard"></div>
+  <div class="checkerboard-alpha"></div>
+  <!--<svg xmlns="http://www.w3.org/2000/svg"
+       width="100" height="100" fill-opacity=".25">
+    <rect x="50" width="50" height="50"/>
+    <rect y="50" width="50" height="50"/>
+  </svg>-->
+  <div class="bg-svg"></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+	 	<title></title>
+        <link href="" type="text/css" rel="stylesheet"/>
+      <style>
+        @keyframes bounce {
+          60%, 80%, to {
+            transform: translateY(400px);
+            animation-timing-function: cubic-bezier(.215,.61,.355,1);
+          }
+          70% {transform: translateY(300px);}
+          90% {transform: translateY(360px);}
+        }
+        
+        .ball {
+          height: 100px; width: 100px;
+          background-color: rgba(0,0,0,0.3);
+          border-radius: 50%;
+/*          animation: bounce 3s ease;*/
+          animation: bounce 3s cubic-bezier(.755,.05,.855,.06);
+          animation-iteration-count: infinite;
+        }
+      </style>
+	</head>
+	<body>
+      <div class="ball"></div>
+    </body>
+</html>

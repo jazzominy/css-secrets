@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: gray;  
+    }
+    
+    div {
+      border: 10px solid hsla(0,0%,100%,.5);
+      background: white;
+      /*When applying bg color, it by default extends under the border.
+      To restrict this extension, use background-clip to specify uptill where, the bg should extend*/
+      background-clip: padding-box;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

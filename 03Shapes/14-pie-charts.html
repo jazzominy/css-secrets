@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .pie, .pie-60, .pie-anim, .pie-anim-paused {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: yellowgreen;
+      background-image: linear-gradient(to right, transparent 50%, #655 0);
+      display: inline-block;
+      color: transparent;
+      text-align: center;
+    }
+    
+    .pie::before {
+      content: '';
+      display: block;
+      margin-left: 50%;
+      height: 100%;
+      border-radius: 0 100% 100% 0 / 50%;
+      background-color: inherit;/*This covers the gradient which we want to reveal*/
+      transform-origin: left;/*rotate around circle's center*/
+      transform: rotate(.1turn);/*10% of 360 deg. This way we can only show 0-50%*/
+    }
+    
+    .pie-60::before {
+      content: '';
+      display: block;
+      margin-left: 50%;
+      height: 100%;
+      border-radius: 0 100% 100% 0 / 50%;
+      background-color: #655;/*Inverting color allows to show 60%-100%*/
+      transform-origin: left;/*rotate around circle's center*/
+      transform: rotate(.1turn);
+    }
+    
+    .pie-anim::before {
+      content: '';
+      display: block;
+      margin-left: 50%;
+      height: 100%;
+      border-radius: 0 100% 100% 0 / 50%;
+      background-color: inherit;
+      transform-origin: left;
+      animation: spin 3s linear infinite,
+                 bg 6s step-end infinite;
+    }
+    
+    @keyframes spin {
+      to {
+        transform: rotate(.5turn);
+      }
+    }
+    
+    @keyframes bg {
+      50% {
+        background-color: #655;
+      }
+    }
+    
+    .pie-anim-paused::before {
+      content: '';
+      display: block;
+      margin-left: 50%;
+      height: 100%;
+      border-radius: 0 100% 100% 0 / 50%;
+      background-color: inherit;
+      transform-origin: left;
+      animation: spin 50s linear infinite,
+                 bg 100s step-end infinite;
+      animation-play-state: paused;
+      animation-delay: inherit;
+    }
+    
+    @keyframes spin {
+      to {
+        transform: rotate(.5turn);
+      }
+    }
+    
+    @keyframes bg {
+      50% {
+        background-color: #655;
+      }
+    }
+    
+    /*circle {
+      fill: yellowgreen;
+      stroke: #655;
+      stroke-width: 50;
+      stroke-dasharray: 20 10; dashes of length 20 with a gap of 10 in between
+      stroke-dasharray: 60 159; C = 2 * 3.14 * 25 (in this case) = 159
+    }*/
+    
+    svg {
+      width: 100px;
+      height: 100px;
+      transform: rotate(-90deg);
+      background: yellowgreen;
+      border-radius: 50%;
+    }
+    
+    @keyframes fillup {
+      to {
+        stroke-dasharray: 158 158;
+      }
+    }
+    
+    circle {
+      fill: yellowgreen;
+      stroke: #655;
+      stroke-width: 32;
+      stroke-dasharray: 38 100;
+      /*animation: fillup 5s linear infinite;*/
+    }
+  </style>
+</head>
+<body>
+  <div class="pie"></div>
+  <div class="pie-60"></div>
+  <div class="pie-anim"></div>
+  <div class="pie-anim-paused">20%</div>
+  <div class="pie-anim-paused">60%</div>
+  
+  <script>
+    //Update animation delay to render the corresponding percentage
+    document.querySelectorAll('.pie-anim-paused').forEach(function(pie){
+      var p = parseFloat(pie.textContent);
+      pie.style.animationDelay = '-' + p + 's';
+    })
+  </script>
+  
+  <!--<svg width="100" height="100">
+    <circle r="25" cx="50" cy="50"/>
+  </svg>-->
+  
+  <svg viewBox="0 0 32 32">
+    <circle r="16" cx="16" cy="16" />
+  </svg>
+</body>
+</html>
